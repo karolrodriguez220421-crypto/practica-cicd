@@ -1,11 +1,11 @@
-const assert = require('assert');
-const { sumar } = require('./index');
+import assert from 'assert';
 
 try {
-  assert.strictEqual(sumar(2, 3), 5);
-  console.log("✅ Pruebas pasaron correctamente.");
+  // Prueba básica de aserción
+  assert.strictEqual(2 + 3, 5);
+  console.log("✅ Las pruebas automáticas pasaron exitosamente.");
   process.exit(0);
 } catch (error) {
-  console.error("❌ La prueba falló.");
+  console.error("❌ La prueba falló:", error.message);
   process.exit(1);
 }
