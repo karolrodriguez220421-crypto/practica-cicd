@@ -1,8 +1,7 @@
 import assert from 'assert';
 
 try {
-  // Cambiamos 5 por 10 para forzar el fallo
-  assert.strictEqual(2 + 3, 10);
+  assert.strictEqual(2 + 3, 5);
   console.log("✅ Las pruebas automáticas pasaron exitosamente.");
   process.exit(0);
 } catch (error) {
