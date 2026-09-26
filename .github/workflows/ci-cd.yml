@@ -1,0 +1,30 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ] # Evento push a la rama main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Configuración del runner
+
+    steps:
+    - name: Descargar el código del repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar entorno de Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Instalar dependencias
+      run: npm install
+
+    - name: Ejecutar pruebas automatizadas
+      run: npm test
+
+    - name: Construir la aplicación
+      run: npm run build --if-present
+
+    - name: Simulación de Despliegue
+      run: echo "Despliegue ejecutado con éxito en el entorno de pruebas."
